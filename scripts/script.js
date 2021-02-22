@@ -157,6 +157,12 @@ function draw() {
 }
 
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+            .register("worker.js")
+            .then(() => console.log("Service Worker Registered"));
+}
+
 fetch(FIGHTERS_JSON_FILENAME)
 .then(response => response.json())
 .then(fightersData => {
@@ -164,15 +170,14 @@ fetch(FIGHTERS_JSON_FILENAME)
         fighters.push(new Fighter(fighterdata));
     });
 
-    randomBtn.onclick = () => {
+    window.onclick = () => {
         randomizeFighter();
     };
     resetBtn.onclick = () => {
         fightersLeft = [];
         fillPoolOfFighters();
-    }
+    };
 });
-
 
 
 window.onresize = resizeCanvas;

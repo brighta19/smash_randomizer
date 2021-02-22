@@ -1,0 +1,22 @@
+{
+    "short_name": "Smash Randomizer",
+    "name": "Smash Randomizer - A SSBU Fighter Randomizer",
+    "description": "A Super Smash Bros. Ultimate Random Fighter Selection Tool",
+    "icons": [
+        {
+            "src": "icon_256x256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "icon_1024x1024.png",
+            "type": "image/png",
+            "sizes": "1024x1024",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/index.html",
+    "background_color": "#111111",
+    "theme_color": "#333333",
+    "display": "standalone"
+}

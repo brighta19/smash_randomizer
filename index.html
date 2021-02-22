@@ -1,16 +1,58 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
+    <meta name="theme-color" content="#111111"/>
+    <meta name="description" content="A Super Smash Bros. Ultimate random fighter selection tool">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="icon_192x192.png">
+    <link rel="preload" href="scripts/fighter.js" as="script" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            background: #333;
+        }
+
+        .buttonContainer {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        #resetBtn {
+            background: #aaa;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        #resetBtn:focus {
+            outline: none;
+        }
+
+        #resetBtn:hover {
+            background: #888;
+        }
+
+        #resetBtn:active {
+            background: #666;;
+        }
+
+        #cvs {
+            display: block;
+        }
+    </style>
     <title>SMASH RANDOMIZER</title>
 </head>
 <body>
     <canvas id="cvs"></canvas>
     <div class="buttonContainer">
-        <button id="randomBtn">Randomize Fighter</button>
-        <button id="resetBtn">Reset Random List of Fighters</button>
+        <button id="resetBtn">Reset</button>
     </div>
     <script type="module" src="scripts/script.js"></script>
 </body>

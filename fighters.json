@@ -81,5 +81,6 @@
     [75, "Byleth",          false, false,   "images/byleth.webp",               "sounds/announcer_byleth.wav"],
     [76, "Min Min",         false, false,   "images/min_min.webp",              "sounds/announcer_min_min.wav"],
     [77, "Steve",           false, false,   "images/steve.webp",                "sounds/announcer_steve.wav"],
-    [78, "Sephiroth",       false, false,   "images/sephiroth.webp",            "sounds/announcer_sephiroth.wav"]
+    [78, "Sephiroth",       false, false,   "images/sephiroth.webp",            "sounds/announcer_sephiroth.wav"],
+    [79, "Pyra",            false, false,   "images/pyra_mythra.webp",           "sounds/announcer_pyra.wav"]
 ]

@@ -105,7 +105,7 @@ function draw() {
         dateReady = Date.now();
         matchupSound.play();
     }
-    
+
     if (fighterIsReady) {
         if (!revealedFighter && currentDate >= dateReady + REVEAL_TIMEOUT_MS) {
             dateRevealed = Date.now();
@@ -117,7 +117,7 @@ function draw() {
 
         let width = null;
         let height = null;
-    
+
         if (fighterImage.width > fighterImage.height) {
             width = imageRenderSize;
             height = imageRenderSize / fighterImage.width * fighterImage.height;
@@ -126,15 +126,15 @@ function draw() {
             height = imageRenderSize;
             width = imageRenderSize / fighterImage.height * fighterImage.width;
         }
-    
+
         let x = (innerWidth / 2) - (width / 2);
         let y = (innerHeight / 2) - (height / 2);
-    
+
         if (currentDate < dateReady + SHAKE_MS) {
             x += getRandomNumberBetween(-50, 50);
             y += getRandomNumberBetween(-50, 50);
         }
-    
+
         ctx.filter = revealedFighter ? "none" : `contrast(0%) brightness(0%) blur(${(1 - ((currentDate - dateReady) / REVEAL_TIMEOUT_MS)) * 50}px)`;
         ctx.drawImage(fighterImage, x, y, width, height);
 

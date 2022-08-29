@@ -6,8 +6,8 @@ const REVEAL_TIMEOUT_MS = 800;
 const WHITE_SCREEN_FADE_MS = 400;
 const SHAKE_MS = 1000;
 
-let randomBtn = document.querySelector("#randomBtn");
-let resetBtn = document.querySelector("#resetBtn");
+let resetBtn = document.querySelector("#reset-btn");
+let spinner = document.querySelector("#loading-spinner");
 let canvas = document.querySelector("#cvs");
 let ctx = canvas.getContext("2d");
 
@@ -37,6 +37,14 @@ let revealedFighter = false;
 let showWhiteScreen = false;
 let whiteScreenOpacity = 0;
 
+
+function showLoadingSpinner() {
+    spinner.classList.remove("hide");
+}
+
+function hideLoadingSpinner() {
+    spinner.classList.add("hide");
+}
 
 function resizeCanvas() {
     canvas.width = innerWidth;
@@ -101,6 +109,7 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (!fighterIsReady && readyToDrawFighter && readyToAnnounceFighter) {
+        hideLoadingSpinner();
         fighterIsReady = true;
         dateReady = Date.now();
         matchupSound.play();
@@ -170,13 +179,15 @@ fetch(FIGHTERS_JSON_FILENAME)
         fighters.push(new Fighter(fighterdata));
     });
 
-    window.onclick = () => {
+    document.addEventListener("click", () => {
+        showLoadingSpinner();
         randomizeFighter();
-    };
-    resetBtn.onclick = () => {
+    });
+
+    resetBtn.addEventListener("click", () => {
         fightersLeft = [];
         fillPoolOfFighters();
-    };
+    });
 });
 
 

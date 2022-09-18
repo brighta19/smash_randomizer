@@ -4,12 +4,12 @@
     "description": "A Super Smash Bros. Ultimate Random Fighter Selection Tool",
     "icons": [
         {
-            "src": "icon_256x256.png",
+            "src": "images/icons/icon_256x256.png",
             "type": "image/png",
             "sizes": "256x256"
         },
         {
-            "src": "icon_1024x1024.png",
+            "src": "images/icons/icon_1024x1024.png",
             "type": "image/png",
             "sizes": "1024x1024",
             "purpose": "any maskable"

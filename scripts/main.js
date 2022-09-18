@@ -84,19 +84,18 @@ function randomizeFighter() {
 
     fighterImage = new Image();
     fighterImage.src = fighter.imgSrc;
-    fighterImage.onload = () => {
+    fighterImage.addEventListener("load", () => {
         readyToDrawFighter = true;
-    };
+    });
 
-    announcerVoice = new Audio();
-    announcerVoice.src = fighter.audSrc;
-    announcerVoice.oncanplay = () => {
+    announcerVoice = new Audio(fighter.audSrc);
+    announcerVoice.addEventListener("canplaythrough", () => {
         readyToAnnounceFighter = true;
-    };
+    });
 
     fighterIsReady = false;
     readyToDrawFighter = false;
-    readyToAnnounceFighter = false;
+    readyToAnnounceFighter = true;
 
     revealedFighter = false;
     showWhiteScreen = false;
